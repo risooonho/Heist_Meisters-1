@@ -25,14 +25,17 @@ position = Vector2( 370, 505 )
 rotation = -1.57079
 
 [node name="Cam2" parent="SecurtyCameras" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 950, 405 )
 rotation = 3.14159
 
 [node name="Cam3" parent="SecurtyCameras" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 390, 70 )
 rotation = 1.5708
 
 [node name="Cam4" parent="SecurtyCameras" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 780, 135 )
 rotation = 1.5708
 

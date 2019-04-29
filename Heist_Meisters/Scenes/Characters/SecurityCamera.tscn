@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/PNG/Tiles/tile_463.png" type="Texture" id=1]
-[ext_resource path="res://GFX/PNG/Tiles/tile_536.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/PlayerDetection.gd" type="Script" id=2]
+[ext_resource path="res://GFX/PNG/Tiles/tile_536.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="Animation" id=1]
-resource_name = "CameraScan"
+[sub_resource type="Animation" id=2]
 length = 12.0
 loop = true
 step = 0.5
@@ -35,20 +35,21 @@ texture = ExtResource( 1 )
 rotation = 0.785398
 collision_layer = 4
 collision_mask = 0
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="CameraBody"]
 position = Vector2( 10, 0 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="Torch" parent="CameraBody" instance=ExtResource( 3 )]
+[node name="Torch" parent="CameraBody" instance=ExtResource( 4 )]
 scale = Vector2( 0.5, 0.5 )
 offset = Vector2( 360, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBody"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraBody"]
 autoplay = "CameraScan"
-anims/CameraScan = SubResource( 1 )
+anims/CameraScan = SubResource( 2 )
