@@ -64,8 +64,10 @@ ui_down={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Walls"
 2d_physics/layer_3="SecurityCameras"
+2d_physics/layer_4="Guards"
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

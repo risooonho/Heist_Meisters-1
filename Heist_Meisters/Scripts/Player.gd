@@ -5,14 +5,16 @@ var motion = Vector2()
 func _ready():
 	Global.Player = self
 
+
 func _process(delta):
 	update_motion(delta)
 	move_and_slide(motion)
 
+
 func update_motion(delta):
 	look_at(get_global_mouse_position())
 	
-	#Movement with Normalized Vector2 - code by Udemy user "Jean-François"
+	# Movement with Normalized Vector2 - code by Udemy user "Jean-François"
 	var velocity = Vector2()
 	velocity.x += int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	velocity.y += int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
@@ -26,4 +28,4 @@ func update_motion(delta):
 		motion.y = lerp(motion.y, 0, FRICTION)
 
 #func toggle_torch():
-#	$Torch.enabled = !$Torch.enabled #Udemy Kit's brilliant toggle
+#	$Torch.enabled = !$Torch.enabled # Udemy Kit's brilliant toggle
