@@ -11,6 +11,7 @@ export var nav_stop_threshold = 5 # Gives 5 pixel margin of error to stop moveme
 onready var navigation = Global.navigation
 onready var available_navpoints = Global.navpoints
 
+
 func _ready():
 	possible_navpoints = available_navpoints.get_children()
 	make_path()
