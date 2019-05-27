@@ -34,10 +34,6 @@ func update_motion(delta):
 		motion.y = lerp(motion.y, 0, FRICTION)
 
 
-#func toggle_torch():
-#	$Torch.enabled = !$Torch.enabled # Udemy Kit's brilliant toggle
-
-
 func _input(event):
 	if Input.is_action_just_pressed("ui_vision_mode_change") and not vision_change_on_cooldown:
 		cycle_vision_mode()
@@ -47,12 +43,14 @@ func _input(event):
 
 func cycle_vision_mode():
 	if vision_mode == VISION_MODES.DARK:
-		get_tree().call_group("interface", "NiteVision_ON")
+		get_tree().call_group("interface", "NightVision_mode")
 		vision_mode = VISION_MODES.NIGHTVISION
 	elif vision_mode == VISION_MODES.NIGHTVISION:
-		get_tree().call_group("interface", "DarkVision_ON")
+		get_tree().call_group("interface", "DarkVision_mode")
 		vision_mode = VISION_MODES.DARK
 
 
 func _on_VisionModeTimer_timeout():
 	vision_change_on_cooldown = false
+
+
