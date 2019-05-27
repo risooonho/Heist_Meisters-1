@@ -78,7 +78,6 @@ ui_vision_mode_change={
 
 [rendering]
 
-quality/intended_usage/framebuffer_allocation=0
-quality/intended_usage/framebuffer_allocation.mobile=0
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.0705882, 0.0117647, 0.113725, 1 )
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
