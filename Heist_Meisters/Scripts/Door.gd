@@ -5,6 +5,7 @@ var can_click = false
 func _on_Door_body_entered(body):
 	if not body == Global.Player and not $AnimationPlayer.is_playing():
 		open()
+		print(body.get_parent().name)
 	else:
 		can_click = true
 
@@ -21,3 +22,4 @@ func open():
 func _input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click:
 		open()
+
